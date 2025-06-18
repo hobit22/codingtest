@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
@@ -14,3 +14,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
         implicit_naming_strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
     open-in-view: false
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-initial-schema-and-data.yaml
