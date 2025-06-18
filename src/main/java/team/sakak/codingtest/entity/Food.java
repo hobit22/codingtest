@@ -1,10 +1,7 @@
 package team.sakak.codingtest.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Comment;
 
 @Entity
@@ -12,6 +9,7 @@ import org.hibernate.annotations.Comment;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "foods")
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
 public class Food {
 
     @Id
@@ -68,5 +66,24 @@ public class Food {
 
     @Comment("트랜스지방(g)(1회제공량당)")
     private Double transFat;
+
+    public void updateWith(Food other) {
+        this.foodCd = other.getFoodCd();
+        this.groupName = other.getGroupName();
+        this.foodName = other.getFoodName();
+        this.researchYear = other.getResearchYear();
+        this.makerName = other.getMakerName();
+        this.refName = other.getRefName();
+        this.servingSize = other.getServingSize();
+        this.calorie = other.getCalorie();
+        this.carbohydrate = other.getCarbohydrate();
+        this.protein = other.getProtein();
+        this.province = other.getProvince();
+        this.sugars = other.getSugars();
+        this.salt = other.getSalt();
+        this.cholesterol = other.getCholesterol();
+        this.saturatedFattyAcids = other.getSaturatedFattyAcids();
+        this.transFat = other.getTransFat();
+    }
 }
 
