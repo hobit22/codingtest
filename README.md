@@ -76,12 +76,13 @@ http://localhost:8080/swagger-ui/index.html
 ├── Dockerfile
 ├── build.gradle
 └── src/main/java/team/sakak/codingtest
+    ├── config
     ├── controller
     ├── dto
     ├── entity
     ├── repository
     ├── service
-    └── SakakApplication.java
+    └── CodingTestApplication.java
 ```
 
 ---
