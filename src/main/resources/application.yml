@@ -16,3 +16,6 @@ spring:
 
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-initial-schema-and-data.yaml
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
