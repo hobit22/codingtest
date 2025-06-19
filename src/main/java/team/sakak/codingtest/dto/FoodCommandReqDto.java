@@ -1,24 +1,42 @@
 package team.sakak.codingtest.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import team.sakak.codingtest.entity.Food;
 
+
 public record FoodCommandReqDto(
-        String foodCd,                    // 식품코드
-        String groupName,                // 식품군
-        String foodName,                 // 식품이름
-        String researchYear,             // 조사년도
-        String makerName,                // 지역/제조사
-        String refName,                  // 자료출처
-        Double servingSize,              // 1회 제공량
-        Double calorie,                  // 열량(kcal)(1회제공량당)
-        Double carbohydrate,             // 탄수화물(g)(1회제공량당)
-        Double protein,                  // 단백질(g)(1회제공량당)
-        Double province,                 // 지방(g)(1회제공량당)
-        Double sugars,                   // 총당류(g)(1회제공량당)
-        Double salt,                     // 나트륨(mg)(1회제공량당)
-        Double cholesterol,              // 콜레스테롤(mg)(1회제공량당)
-        Double saturatedFattyAcids,      // 포화지방산(g)(1회제공량당)
-        Double transFat                  // 트랜스지방(g)(1회제공량당)
+        @Schema(description = "식품코드", example = "D000007")
+        String foodCd,
+        @Schema(description = "식품군", example = "음식")
+        String groupName,
+        @Schema(description = "식품이름", example = "닭갈비")
+        String foodName,
+        @Schema(description = "조사년도", example = "2019")
+        String researchYear,
+        @Schema(description = "지역/제조사", example = "전국(대표)")
+        String makerName,
+        @Schema(description = "자료출처", example = "식품의약품안전처")
+        String refName,
+        @Schema(description = "1회 제공량", example = "400")
+        Double servingSize,
+        @Schema(description = "열량(kcal)", example = "595.61")
+        Double calorie,
+        @Schema(description = "탄수화물(g)", example = "38.2")
+        Double carbohydrate,
+        @Schema(description = "단백질(g)", example = "3.5")
+        Double protein,
+        @Schema(description = "지방(g)", example = "0.5")
+        Double province,
+        @Schema(description = "총당류(g)", example = "0.6")
+        Double sugars,
+        @Schema(description = "나트륨(mg)", example = "5.0")
+        Double salt,
+        @Schema(description = "콜레스테롤(mg)", example = "0.0")
+        Double cholesterol,
+        @Schema(description = "포화지방산(g)", example = "0.1")
+        Double saturatedFattyAcids,
+        @Schema(description = "트랜스지방(g)", example = "0.0")
+        Double transFat
 ) {
 
     public Food toEntity() {
